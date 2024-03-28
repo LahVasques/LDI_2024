@@ -1,0 +1,35 @@
+main{
+    display: flex;
+}
+
+.container_caduser{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container_form-caduser{
+    display: flex;
+    flex-direction: column;
+}
+
+.container_form__itens{
+    display: flex;
+    flex-direction: column;
+}
+
+.container_form_itens__input{
+    display: flex;
+    flex-direction: column;
+}
+
+.container_form_itens__submit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_form-busca{
+    display: flex;
+    flex-direction: column;
+}
