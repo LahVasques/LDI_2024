@@ -1,0 +1,34 @@
+
+
+.container_cad{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container_form-cad{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    align-items: center;
+}
+
+.container_form__itens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem 2rem 2rem;
+    margin: 0 1rem 1rem 1rem;
+}
+
+.container_form_itens__inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.container_form_itens__submit{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    margin-top: 0.5rem;
+}
