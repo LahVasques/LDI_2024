@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    height: 90vh;
+    width: 100%;
+    padding: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    overflow: hidden;
+    background-color: #d3d5df;
+    padding: auto 15px;
+}
+
+.menu_nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu_nav-left{
+    float: left;
+}
+
+.menu_nav-right{
+    display: flex;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+}
+
+.menu_nav__link a{
+    float: left;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    font-size: 18px;
+    line-height: 10px;
+    transition: all 0.8s;
+    margin: 0px 5px;
+}
+
+.menu_img img, 
+.menu_nav-left img{
+    width: 80px;
+    height: auto;
+    margin: 0px 5px;
+    padding: 15px;
+}
+
+/* footer */
+footer{
+    background-color: #d3d5df;
+    height: auto;
+    width: 100%;
+    /* font-family: 'Courier New', Courier, monospace; */
+    padding-top: 40px;
+    color: white;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+    margin: 0 10px;
+}
+
+.socials a{
+    text-decoration: none;
+    color: white;
+}
+
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+
+.socials a:hover{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #d0d3dd;
+    width: auto;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}

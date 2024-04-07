@@ -1,0 +1,69 @@
+.container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container_cad,
+.container_busca,
+#cxprincipal{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 2rem 0;
+    border: solid 1px #e0e0e0;
+    border-radius: 10px;
+}
+
+.container_form-cad,
+.container_form-busca,
+#cxmenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_form-cad{
+    width: 25vw;
+}
+
+
+.container_form-cad h1,
+.container_form-busca h1,
+#cxmenu h1{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.container_form__itens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 2rem 2rem 2rem;
+    margin: 0 1rem;
+}
+
+.container_form_itens__inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.container_form_input{
+    margin: 0.3rem 0;
+}
+
+.container_form_itens__submit{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    margin-top: 0.8rem;
+}
+
+.container_busca{
+    display: none;
+}
+
+.container_form-busca{
+    width: 30vw;
+}
