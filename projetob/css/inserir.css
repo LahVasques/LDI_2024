@@ -31,3 +31,7 @@
     transform: scale(1.1);
     filter: brightness(1.2);
 }
+
+.container_input input{
+    color: var(--roxo-mais-claro);
+}

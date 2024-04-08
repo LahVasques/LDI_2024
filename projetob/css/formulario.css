@@ -52,6 +52,7 @@
 .container_form_input,
 .container_form_itens__inputs input{
     margin: 0.3rem 0;
+    color: var(--roxo-escuro);
 }
 
 .container_form_input span{
