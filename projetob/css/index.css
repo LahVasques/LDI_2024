@@ -1,24 +1,29 @@
 #cxprincipal{
     width: 1000px;
-    height: 666px;
+    height: 900px;
     position: relative;
     margin: auto;
     display: flex;
     
-    padding-top: 220px;
+    padding-top: 310px;
     margin-bottom: 250px;
 }
 
-#header_index{
+#header_index {
     width: 100%;
-    height: 200px;
+    height: auto;
     margin-bottom: 20px;
-    background-color:aqua;
+
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#header_index img {
+    width: 100%;
+    height: auto;
 }
 
 .linha-1,
@@ -27,7 +32,7 @@
 }
 
 .linha-2{
-    margin-top: 333px;
+    margin-top: 400px;
 }
 
 #cxamigo, 
@@ -36,13 +41,17 @@
 #cxconsultaamigo, 
 #cxconsultacomercio,
 #cxconsultauser{
-    width: 333px;
-    height: 333px;
+    width: 290px;
+    height: 360px;
     padding: 1rem;
+    gap: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
+
+    background: linear-gradient(-210deg, var(--roxo-escuro), var(--roxo-mais-claro));
+    border-radius: 10px;
 }
 
 
@@ -72,4 +81,25 @@
 
 #cxconsultauser{
     margin-left: 666px;
+}
+
+.consulta_link{
+    background-color: var(--branco);
+    margin-top: 1rem;
+    border-radius: 50px;
+    padding: 0.2rem;
+}
+
+.consulta_link a {
+    display: flex; 
+    align-items: center;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: var(--roxo-escuro);
+}
+
+.consulta_link i{
+    font-size: 30px;
+    margin-left: 0.5rem;
+    color: var(--roxo-escuro);
 }
