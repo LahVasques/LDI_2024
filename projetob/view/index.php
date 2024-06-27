@@ -17,10 +17,24 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Menu - Memória Digital</title>
+    
+    <?php
+        SESSION_START();
+        if ((!isset($_SESSION["email"])==true) 
+        && (!isset($_SESSION["senha"])==true)) 
+        {
+            header("location:index.php");
+        } 
+        
+        $logado = $_SESSION["email"];    
+        if ($logado == false ){
+            header("location:login.php");
+
+    ?>
+
 </head>
 
 <body>
-
     <div class="menu">
         <div class="menu_nav">
 
@@ -33,7 +47,13 @@
                     <a href="/projetob/view/index.php">Home</a>
                 </div>
                 <div class="menu_nav__link">
-                    <a href="/projetob/view/login.php">Login</a>
+                    <?php
+                            echo "<a href='/projetob/view/login.php'>Login</a>";
+                        } else { 
+                            echo "<a href='../model/exit.php'>Sair</a>";
+                        };
+
+                    ?>
                 </div>
 
                 <div class="menu_img">
