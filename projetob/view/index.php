@@ -25,10 +25,6 @@
         {
             header("location:index.php");
         } 
-        
-        $logado = $_SESSION["email"];    
-        if ($logado == false ){
-            header("location:login.php");
 
     ?>
 
@@ -47,13 +43,7 @@
                     <a href="/projetob/view/index.php">Home</a>
                 </div>
                 <div class="menu_nav__link">
-                    <?php
-                            echo "<a href='/projetob/view/login.php'>Login</a>";
-                        } else { 
-                            echo "<a href='../model/exit.php'>Sair</a>";
-                        };
-
-                    ?>
+                    <a href="../model/exit.php">Sair</a>
                 </div>
 
                 <div class="menu_img">

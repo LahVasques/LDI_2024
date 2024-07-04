@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/formulario.css">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.cs">
     <link rel="shortcut icon" type="imagex/png" href="../img/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -45,44 +45,87 @@
     </header>
 
     <main>
-            <div id="cxprincipal">
-                <figure id="cxfigura">
-                        <img class="figura_icon" src="../img/pfp.png" alt="">        
-                </figure>
-                <div id="cxmenu">
-                    <h1>Acesso ao Sistema</h1>
-                    <form action="../model/open.php" method="POST">
-                        
-                        <div class="container_form__itens">
-    
-                            <div class="container_form_itens__inputs">
-                                
-                                <div class="container_form_input">
-                                    <label>Usuário:</label><br/>
-                                    <input type="text" name="cxuser" class="cxuser">
+            <div class="container">
+                <div class="container_cad" id="cadastro">
+                    <div class="container_form-cad">
+                        <h1>Cadastro de Usuário</h1>
+                        <form action="../model/cadusuario.php" method="POST">
+                            
+                            <div class="container_form__itens">
+        
+                                <div class="container_form_itens__inputs">
+                                    
+                                    <div class="container_form_input">
+                                        <label>Nome:</label><br/>
+                                        <input type="text" name="cxnome" required>
+                                    </div>
+        
+                                    <div class="container_form_input">
+                                        <label>E-mail:</label> <br/>
+                                        <input type="e-mail" name="cxemail" required>
+                                    </div>
+        
+                                    <div class="container_form_input">
+                                        <label>Senha:</label> <br/>
+                                        <input type="password" name="cxsenha" required>    
+                                    </div> 
+        
                                 </div>
-    
-                                <div class="container_form_input">
-                                    <label>E-mail:</label> <br/>
-                                    <input type="e-mail" name="cxemail">
+        
+                                <div class="container_form_itens__submit">    
+                                    <input type="submit" value="Cadastrar">
                                 </div>
-    
-                                <div class="container_form_input">
-                                    <label>Senha:</label> <br/>
-                                    <input type="password" name="cxsenha" class="cxsenha">  
-                                </div> 
-    
+        
                             </div>
-    
-                            <div class="container_form_itens__submit">    
-                                <input type="submit" value="Acessar">
-                            </div>
-    
-                        </div>
-    
-                    </form>
+        
+                        </form>
+                        <p>Já tem cadastro? 
+                            <a href="/projetob/view/login.php?action=login">Logue-se</a> 
+                        </p>
+                    </div>
                 </div>
-            </div>
+            
+                <div class="container_login" id="login">
+                    <div class="container_form-login">
+                        <img class="figura_icon" src="../img/pfp.png" alt="">        
+                        <h1>Acesso ao sistema</h1>
+                        <form action="../model/open.php" method="POST">
+                            
+                            <div class="container_form__itens">
+        
+                                <div class="container_form_itens__inputs">
+                                    
+                                    <div class="container_form_input">
+                                        <label>Usuário:</label><br/>
+                                        <input type="text" name="cxuser" class="cxuser">
+                                    </div>
+        
+                                    <div class="container_form_input">
+                                        <label>E-mail:</label> <br/>
+                                        <input type="e-mail" name="cxemail">
+                                    </div>
+        
+                                    <div class="container_form_input">
+                                        <label>Senha:</label> <br/>
+                                        <input type="password" name="cxsenha" class="cxsenha">  
+                                    </div> 
+        
+                                </div>
+        
+                                <div class="container_form_itens__submit">    
+                                    <input type="submit" value="Acessar">
+                                </div>
+        
+                            </div>
+        
+                        </form>
+                        <p>Ainda não tem cadastro? 
+                            <a href="/projetob/view/login.php?action=cadastro">Registre-se</a> 
+                        </p>
+                    </div>
+                </div>
+        </div>
+
     </main>
     
     <footer>
@@ -101,5 +144,7 @@
             <p>copyright &copy;2024 LaissVasques</p>
         </div>
     </footer>
+
+    <script src="../js/hide.js"></script>
 </body>
 </html>

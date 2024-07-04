@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
@@ -13,9 +13,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Resultados da busca - Empresa</title>
+    <title>Processamento - Usuário</title>
 </head>
+
 <body>
+<?php
+    if ($_POST["cxnome"] != "") {
+        include_once "../factory/conexao.php";
+
+        $nome = $_POST["cxnome"];
+        $email = $_POST["cxemail"];
+        $senha = $_POST["cxsenha"];
+        $sql = "insert into tbusuario(nome,email,senha)
+        values ('$nome','$email','$senha')";
+        $query = mysqli_query($conn,$sql);
+?>
     <header>
         <div class="menu">
             <div class="menu_nav">
@@ -44,49 +56,16 @@
     <main>
         <div class="container">
             <div class="container_processo">
-
                 <?php
-                    include_once "../factory/conexao.php";
-
-                    if(isset($_POST["cxpesquisa"])) {
-                        $nome = $_POST["cxpesquisa"];
-                        $consultar = "SELECT * FROM tbcomercio WHERE empresa = '$nome'";
-                        $executar = mysqli_query($conn, $consultar);
-
-                        if(mysqli_num_rows($executar) > 0) {
-                            $linha = mysqli_fetch_array($executar);
-
-                            echo '<h1>Resultados encontrados</h1>';
-                ?>
-                <div class="container_itens">
-
-                    <div class="container_input">
-                        <span for="">Nome:</span> <br/>
-                        <input type="text" name="" value="<?php echo $linha ['empresa'] ?>" readonly/>
-                    </div>
-                    <div class="container_input">
-                        <span for="">E-mail:</span>  <br/>
-                        <input type="text" name="" value="<?php echo $linha['email'] ?>" readonly/>
-                    </div>
-                    <div class="container_input">
-                        <span for="">Contato:</span>  <br/>
-                        <input type="text" name="" value="<?php echo $linha ['contato'] ?>" readonly/>
-                    </div>
-                    <div class="container_input">
-                        <span for="">Telefone:</span>  <br/>
-                        <input type="text" name="" value="<?php echo $linha ['tel'] ?>" readonly/>
-                    </div>
-                    <div class="container_button">
-                        <a href="/projetob/view/telacaduser.php?action=buscar"><button>Voltar</button></a>
-                    </div>
-                </div>
-
-                <?php
-                        } else {
-                            echo '<h1>Dados não encontrados</h1>';
-                            echo '<a href="/projetob/view/telacaduser.php?action=buscar"><button>Voltar</button></a>';
-                        }
+                    if ($query) {
+                        echo '<h1>Cadastrado com sucesso!</h1>';
+                        echo '<a href="/projetob/view/login.php?action=login"><button>Logue-se</button></a>';
+                    } else {
+                        
+                        echo '<h1>Dados não cadastrados</h1>';
+                        echo '<a href="/projetob/view/login.php?action=cadastro"><button>Voltar</button></a>';
                     }
+                }
                 ?>
             </div>
         </div>
@@ -109,6 +88,5 @@
             <p>copyright &copy;2024 LaissVasques</p>
         </div>
     </footer>
-
 </body>
 </html>

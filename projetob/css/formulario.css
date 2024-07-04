@@ -1,6 +1,6 @@
 .container_cad,
 .container_busca,
-#cxprincipal{
+.container_login{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -11,28 +11,39 @@
     border-radius: 10px;
 }
 
+.container_login{
+    display: none;
+}
+
 .container_form-cad,
 .container_form-busca,
-#cxmenu{
+.container_form-login{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.container_form-cad{
+.container_form-cad,
+.container_form-login{
     width: 25vw;
 }
 
 
 .container_form-cad h1,
 .container_form-busca h1,
-#cxmenu h1{
+.container_form-login h1{
     font-size: 20px;
     font-weight: 700;
 }
 
+.container_form-login > img{
+    width: 150px;
+    height: auto;
+}
+
 .container_form-cad p,
-.container_form-busca p{
+.container_form-busca p,
+.container_form-login p{
     margin-top: 1rem;
 }
 
