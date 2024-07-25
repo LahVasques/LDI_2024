@@ -1,14 +1,13 @@
 <?php
     include_once "../factory/conexao.php";
-    //se der certo 
+    // se der certo 
 
-    // $_POST["cxnome"];
+    $id = $_GET["id"];
     
-    // $nome = $_POST["cxnome"];
-    // $email = $_POST["cxemail"];
-    // $datanasc = $_POST["cxdatanasc"];
-    // $tel = $_POST["cxtel"];
-
+    $nome = $_POST["cxnome"];
+    $email = $_POST["cxemail"];
+    $datanasc = $_POST["cxdatanasc"];
+    $tel = $_POST["cxtel"];
     
     $editar = "UPDATE tbamigos SET nome = $nome, email = $email, datanasc = $datanasc, tel = $tel WHERE email = $email";
     $executar = mysqli_query($conn, $editar);

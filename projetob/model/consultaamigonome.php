@@ -76,10 +76,10 @@
                         <input type="text" name="cxtel" value="<?php echo $linha ['tel'] ?>"/>
                     </div>
                     <div class="container_button">
-                        <a href=""><button type="submit" name="action" value="salvar">Salvar e Sair</button></a>
+                        <a href="editaramigo.php?id=<?php echo $linha["codigo"]?>"><button type="text">Salvar e Sair</button></a>
                     </div>
                     <div class="container_button">
-                        <a href=""><button type="submit" name="action" value="excluir">Excluir</button></a>
+                        <a href="excluiramigo.php?id=<?php echo $linha["codigo"]?>"><button type="text" >Excluir</button></a>
                     </div>
                 </div>
 
