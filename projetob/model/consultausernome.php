@@ -30,7 +30,7 @@
                         <a href="/projetob/view/index.php">Home</a>
                     </div>
                     <div class="menu_nav__link">
-                        <a href='/projetob/view/login.php'>Sair</a>
+                        <a href="../model/exit.php">Sair</a>
                     </div>
 
                     <div class="menu_img">
@@ -57,7 +57,7 @@
                         if(mysqli_num_rows($executar) > 0) {
                             $linha = mysqli_fetch_array($executar);
 
-                            echo '<h1>Resultados encontrados</h1>';
+                            echo '<h1>Usuários Encontrados</h1>';
                 ?>
                 <div class="container_itens">
 

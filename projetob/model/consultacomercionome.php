@@ -29,7 +29,7 @@
                         <a href="/projetob/view/index.php">Home</a>
                     </div>
                     <div class="menu_nav__link">
-                        <a href='/projetob/view/login.php'>Sair</a>
+                        <a href="../model/exit.php">Sair</a>
                     </div>
 
                     <div class="menu_img">
@@ -56,7 +56,7 @@
                         if(mysqli_num_rows($executar) > 0) {
                             $linha = mysqli_fetch_array($executar);
 
-                            echo '<h1>Resultados encontrados</h1>';
+                            echo '<h1>Empresas Encontradas</h1>';
                 ?>
                 <div class="container_itens">
 
@@ -77,14 +77,14 @@
                         <input type="text" name="" value="<?php echo $linha ['tel'] ?>" readonly/>
                     </div>
                     <div class="container_button">
-                        <a href="/projetob/view/telacaduser.php?action=buscar"><button>Voltar</button></a>
+                        <a href="/projetob/view/telacadcomercio.php?action=buscar"><button>Voltar</button></a>
                     </div>
                 </div>
 
                 <?php
                         } else {
                             echo '<h1>Dados não encontrados</h1>';
-                            echo '<a href="/projetob/view/telacaduser.php?action=buscar"><button>Voltar</button></a>';
+                            echo '<a href="/projetob/view/telacadcomercio.php?action=buscar"><button>Voltar</button></a>';
                         }
                     }
                 ?>

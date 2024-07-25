@@ -32,7 +32,7 @@
                         <a href="/projetob/view/index.php">Home</a>
                     </div>
                     <div class="menu_nav__link">
-                        <a href="/projetob/view/login.php">Login</a>
+                        <a href="/projetob/view/login.php?action=login">Login</a>
                     </div>
 
                     <div class="menu_img">
@@ -94,11 +94,6 @@
                             <div class="container_form__itens">
         
                                 <div class="container_form_itens__inputs">
-                                    
-                                    <div class="container_form_input">
-                                        <label>Usuário:</label><br/>
-                                        <input type="text" name="cxuser" class="cxuser">
-                                    </div>
         
                                     <div class="container_form_input">
                                         <label>E-mail:</label> <br/>

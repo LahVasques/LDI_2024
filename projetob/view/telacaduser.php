@@ -30,7 +30,7 @@
                         <a href="/projetob/view/index.php">Home</a>
                     </div>
                     <div class="menu_nav__link">
-                        <a href='/projetob/view/login.php'>Sair</a>
+                        <a href="../model/exit.php">Sair</a>
                     </div>
 
                     <div class="menu_img">

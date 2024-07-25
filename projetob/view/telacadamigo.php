@@ -30,7 +30,7 @@
                         <a href="/projetob/view/index.php">Home</a>
                     </div>
                     <div class="menu_nav__link">
-                        <a href='/projetob/view/login.php'>Sair</a>
+                        <a href="../model/exit.php">Sair</a>
                     </div>
 
                     <div class="menu_img">
@@ -96,7 +96,7 @@
                     <form action="../model/consultaamigonome.php" method="POST">
                         <div class="container_form__itens">
                             <div class="container_form_itens__inputs">
-                                <label for="">Digite o nome completo do amigo:</label>
+                                <label for="">Digite o EMAIL completo do amigo:</label>
                                 <input type="text" name="cxpesquisa" id="" />
                             </div>
     

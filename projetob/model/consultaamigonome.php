@@ -28,7 +28,7 @@
                         <a href="/projetob/view/index.php">Home</a>
                     </div>
                     <div class="menu_nav__link">
-                        <a href='/projetob/view/login.php'>Sair</a>
+                        <a href="../model/exit.php">Sair</a>
                     </div>
 
                     <div class="menu_img">
@@ -48,42 +48,45 @@
                     include_once "../factory/conexao.php";
 
                     if(isset($_POST["cxpesquisa"])) {
-                        $nome = $_POST["cxpesquisa"];
-                        $consultar = "SELECT * FROM tbamigos WHERE nome = '$nome'";
+                        $email = $_POST["cxpesquisa"];
+                        $consultar = "SELECT * FROM tbamigos WHERE email = '$email'";
                         $executar = mysqli_query($conn, $consultar);
 
                         if(mysqli_num_rows($executar) > 0) {
                             $linha = mysqli_fetch_array($executar);
 
-                            echo '<h1>Resultados encontrados</h1>';
+                            echo '<h1>Amigos Encontrados</h1>';
                 ?>
                 <div class="container_itens">
 
                     <div class="container_input">
                         <span for="">Nome:</span> <br/>
-                        <input type="text" name="" value="<?php echo $linha ['nome'] ?>" readonly/>
+                        <input type="text" name="cxnome" value="<?php echo $linha ['nome'] ?>"/>
                     </div>
                     <div class="container_input">
                         <span for="">E-mail:</span>  <br/>
-                        <input type="text" name="" value="<?php echo $linha['email'] ?>" readonly/>
+                        <input type="text" name="cxemail" value="<?php echo $linha['email'] ?>"/>
                     </div>
                     <div class="container_input">
                         <span for="">Data de Nascimento:</span>  <br/>
-                        <input type="text" name="" value="<?php echo $linha ['datanasc'] ?>" readonly/>
+                        <input type="text" name="cxdatanasc" value="<?php echo $linha ['datanasc'] ?>"/>
                     </div>
                     <div class="container_input">
                         <span for="">Telefone:</span>  <br/>
-                        <input type="text" name="" value="<?php echo $linha ['tel'] ?>" readonly/>
+                        <input type="text" name="cxtel" value="<?php echo $linha ['tel'] ?>"/>
                     </div>
                     <div class="container_button">
-                        <a href="/projetob/view/telacaduser.php?action=buscar"><button>Voltar</button></a>
+                        <a href=""><button type="submit" name="action" value="salvar">Salvar e Sair</button></a>
+                    </div>
+                    <div class="container_button">
+                        <a href=""><button type="submit" name="action" value="excluir">Excluir</button></a>
                     </div>
                 </div>
 
                 <?php
                         } else {
                             echo '<h1>Dados não encontrados</h1>';
-                            echo '<a href="/projetob/view/telacaduser.php?action=buscar"><button>Voltar</button></a>';
+                            echo '<a href="/projetob/view/telacadamigo.php?action=buscar"><button>Voltar</button></a>';
                         }
                     }
                 ?>

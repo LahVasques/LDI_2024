@@ -23,9 +23,8 @@
         if ((!isset($_SESSION["email"])==true) 
         && (!isset($_SESSION["senha"])==true)) 
         {
-            header("location:index.php");
-        } 
-
+            header("location:login.php?action=login");
+        };
     ?>
 
 </head>
@@ -147,7 +146,7 @@
         </div>
     </footer>
 
-    <script src="../js/script.js"> </script>
+    <script src="../js/hide.js"> </script>
 </body>
 
 </html>

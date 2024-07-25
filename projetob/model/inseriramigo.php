@@ -17,19 +17,6 @@
 </head>
 
 <body>
-    <?php
-        if ($_POST["cxnome"] != "") {
-            include_once "../factory/conexao.php";
-
-            $nome = $_POST["cxnome"];
-            $email = $_POST["cxemail"];
-            $datanasc = $_POST["cxdatanasc"];
-            $tel = $_POST["cxtel"];
-            
-            $sql = "insert into tbamigos(nome,email,datanasc,tel)
-            values ('$nome','$email','$datanasc','$tel')";
-            $query = mysqli_query($conn,$sql);
-    ?>
     <header>
         <div class="menu">
             <div class="menu_nav">
@@ -43,7 +30,7 @@
                         <a href="/projetob/view/index.php">Home</a>
                     </div>
                     <div class="menu_nav__link">
-                        <a href='/projetob/view/login.php'>Sair</a>
+                        <a href="../model/exit.php">Sair</a>
                     </div>
 
                     <div class="menu_img">
@@ -54,20 +41,46 @@
             </div>
         </div>
     </header>
-
     <main>
         <div class="container">
             <div class="container_processo">
                 <?php
-                    if ($query) {
-                        echo '<h1>Cadastrado com sucesso!</h1>';
-                        echo '<a href="/projetob/view/index.php"><button>Menu Principal</button></a>';
-                    } else {
+                    if ($_POST["cxnome"] != "") {
+                        include_once "../factory/conexao.php";
+
+                        $nome = $_POST["cxnome"];
+                        $email = $_POST["cxemail"];
+                        $datanasc = $_POST["cxdatanasc"];
+                        $tel = $_POST["cxtel"];
+
+                        $verif_email = "SELECT COUNT(*) AS count FROM tbamigos WHERE email = '$email'";
+                        $result = mysqli_query($conn, $verif_email);
                         
-                        echo '<h1>Dados não cadastrados</h1>';
-                        echo '<a href="/projetob/view/telacadamigo.php"><button>Voltar</button></a>';
+                        if ($result) {
+                            $row = mysqli_fetch_assoc($result);
+                            if ($row['count'] > 0) {
+                
+                    echo '<h1>Email já cadastrado!</h1>';
+                    echo '<a href="/projetob/view/telacadamigo.php"><button>Voltar</button></a>';
+
+                            } else {
+                                
+                                $sql = "INSERT INTO tbamigos (nome, email, datanasc, tel) VALUES ('$nome', '$email', '$datanasc', '$tel')";
+                                $query = mysqli_query($conn, $sql);
+                                
+                                if ($query) {
+                                    echo '<h1>Cadastrado com sucesso!</h1>';
+                                    echo '<a href="/projetob/view/index.php"><button>Menu Principal</button></a>';
+                                } else {
+                                    echo '<h1>Ocorreu um erro ao cadastrar os dados</h1>';
+                                    echo '<a href="/projetob/view/telacadamigo.php"><button>Voltar</button></a>';
+                                }
+                            }
+                        } else {
+                            echo '<h1>Ocorreu um erro ao verificar o email</h1>';
+                            echo '<a href="/projetob/view/telacadamigo.php"><button>Voltar</button></a>';
+                        }
                     }
-                }
                 ?>
             </div>
         </div>
