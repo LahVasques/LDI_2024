@@ -57,44 +57,52 @@
 
                             echo '<h1>Amigos Encontrados</h1>';
                 ?>
-                <div class="container_itens">
+                <form action="../model/editaramigo.php?cod=<?php echo $linha['cod']?>" method="post">
 
-                    <div class="container_input">
-                        <span for="">Nome:</span> <br/>
-                        <input type="text" name="cxnome" value="<?php echo $linha ['nome'] ?>"/>
-                    </div>
-                    <div class="container_input">
-                        <span for="">E-mail:</span>  <br/>
-                        <input type="text" name="cxemail" value="<?php echo $linha['email'] ?>"/>
-                    </div>
-                    <div class="container_input">
-                        <span for="">Data de Nascimento:</span>  <br/>
-                        <input type="text" name="cxdatanasc" value="<?php echo $linha ['datanasc'] ?>"/>
-                    </div>
-                    <div class="container_input">
-                        <span for="">Telefone:</span>  <br/>
-                        <input type="text" name="cxtel" value="<?php echo $linha ['tel'] ?>"/>
-                    </div>
-                    <div class="container_button">
-                        <a href="editaramigo.php?id=<?php echo $linha["codigo"]?>"><button type="text">Salvar e Sair</button></a>
-                    </div>
-                    <div class="container_button">
-                        <a href="excluiramigo.php?id=<?php echo $linha["codigo"]?>"><button type="text" >Excluir</button></a>
-                    </div>
-                </div>
+                        <div class="container_itens">
+                            <div class="container_input">
+                                <span for="">Nome:</span> <br/>
+                                <input type="text" name="cxnome" value="<?php echo $linha ['nome'] ?>"/>
+                                                        </div>
+                            <div class="container_input">
+                                <span for="">E-mail:</span>  <br/>
+                                <input type="text" name="cxemail" value="<?php echo $linha['email']?>"/>
+                            </div>
+                            <div class="container_input">
+                                <span for="">Data de Nascimento:</span>  <br/>
+                                <input type="text" name="cxdatanasc" value="<?php echo $linha ['datanasc'] ?>"/>
+                            </div>
+                            <div class="container_input">
+                                <span for="">Telefone:</span>  <br/>
+                                <input type="text" name="cxtel" value="<?php echo $linha ['tel'] ?>"/>
+                            </div>       
+                            
+                            <div class="container_button">
+                                <button type="submit">Salvar
+                                </button>
+                            </div>
+                                
+                            <div class="container_button">
+                                <a href="../model/excluiramigo.php?cod=<?php echo $linha['cod']?>">
+                                    <button type="button" >Excluir
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
 
-                <?php
+                </form>                        
+                        <?php
                         } else {
                             echo '<h1>Dados não encontrados</h1>';
                             echo '<a href="/projetob/view/telacadamigo.php?action=buscar"><button>Voltar</button></a>';
                         }
                     }
-                ?>
+                    ?>
             </div>
         </div>
     </main>
     
-
+    
     <footer>
         <div class="footer-content">
             <h1>Memória Digital</h1>

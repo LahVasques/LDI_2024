@@ -58,29 +58,42 @@
 
                             echo '<h1>Empresas Encontradas</h1>';
                 ?>
-                <div class="container_itens">
 
-                    <div class="container_input">
-                        <span for="">Nome:</span> <br/>
-                        <input type="text" name="" value="<?php echo $linha ['empresa'] ?>" readonly/>
-                    </div>
-                    <div class="container_input">
-                        <span for="">E-mail:</span>  <br/>
-                        <input type="text" name="" value="<?php echo $linha['email'] ?>" readonly/>
-                    </div>
-                    <div class="container_input">
-                        <span for="">Contato:</span>  <br/>
-                        <input type="text" name="" value="<?php echo $linha ['contato'] ?>" readonly/>
-                    </div>
-                    <div class="container_input">
-                        <span for="">Telefone:</span>  <br/>
-                        <input type="text" name="" value="<?php echo $linha ['tel'] ?>" readonly/>
-                    </div>
-                    <div class="container_button">
-                        <a href="/projetob/view/telacadcomercio.php?action=buscar"><button>Voltar</button></a>
-                    </div>
-                </div>
+                <form action="../model/editarcomercio.php?cod=<?php echo $linha['cod']?>" method="post">
 
+                    <div class="container_itens">
+
+                        <div class="container_input">
+                            <span for="">Nome:</span> <br/>
+                            <input type="text" name="cxempresa" value="<?php echo $linha ['empresa'] ?>"/>
+                        </div>
+                        <div class="container_input">
+                            <span for="">E-mail:</span>  <br/>
+                            <input type="text" name="cxemail" value="<?php echo $linha['email'] ?>"/>
+                        </div>
+                        <div class="container_input">
+                            <span for="">Contato:</span>  <br/>
+                            <input type="text" name="cxcontato" value="<?php echo $linha ['contato'] ?>" />
+                        </div>
+                        <div class="container_input">
+                            <span for="">Telefone:</span>  <br/>
+                            <input type="text" name="cxtel" value="<?php echo $linha ['tel'] ?>" />
+                        </div>
+
+                        <div class="container_button">
+                            <button type="submit">Salvar
+                            </button>
+                        </div>
+                            
+                        <div class="container_button">
+                            <a href="../model/excluircomercio.php?cod=<?php echo $linha['cod']?>">
+                                <button type="button">Excluir
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                </form>
                 <?php
                         } else {
                             echo '<h1>Dados não encontrados</h1>';

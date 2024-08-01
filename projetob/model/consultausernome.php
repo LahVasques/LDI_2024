@@ -59,22 +59,33 @@
 
                             echo '<h1>Usuários Encontrados</h1>';
                 ?>
+
+            <form action="../model/editarusuario.php?cod=<?php echo $linha['cod']?>" method="post">
                 <div class="container_itens">
 
                     <div class="container_input">
                         <span for="">Nome:</span> <br/>
-                        <input type="text" name="" value="<?php echo $linha['nome'] ?>" readonly/>
+                        <input type="text" name="cxnome" value="<?php echo $linha['nome'] ?>" />
                     </div>
                     <div class="container_input">
                         <span for="">E-mail:</span>  <br/>
-                        <input type="text" name="" value="<?php echo $linha['email'] ?>" readonly/>
+                        <input type="text" name="cxemail" value="<?php echo $linha['email'] ?>" />
                     </div>
                     <div class="container_input">
                         <span for="">Senha:</span>  <br/>
-                        <input type="password" name="" value="<?php echo $linha['senha'] ?>" readonly/>
+                        <input type="password" name="" value="<?php echo $linha['senha'] ?>" />
                     </div>
+
                     <div class="container_button">
-                        <a href="/projetob/view/telacaduser.php?action=buscar"><button>Voltar</button></a>
+                        <button type="submit">Salvar
+                        </button>
+                    </div>
+                        
+                    <div class="container_button">
+                        <a href="../model/excluirusuario.php?cod=<?php echo $linha['cod']?>">
+                            <button type="button">Excluir
+                            </button>
+                        </a>
                     </div>
                 </div>
 
@@ -85,6 +96,7 @@
                         }
                     }
                 ?>
+            </form>
             </div>
         </div>
     </main>
