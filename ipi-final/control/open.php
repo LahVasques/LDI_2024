@@ -5,32 +5,26 @@
 
     $email = $_POST["inp-email"];
     $senha = $_POST["inp-senha"];
-   
-    $sql = "select * from usuarios where email = '$email' and senha = '$senha' ";
-    
-    
-    $paluno = "select * from usuarios where email = '$email' and grupo = '3'";
-    $pprofessor = "select * from usuarios where email = '$email' and grupo = '2'";
-    $pdiretor = "select * from usuarios where email = '$email' and grupo = '1'";
-
-    $executar = mysqli_query($caminho,$sql);
-
+        
+    $sql = "select grupo from usuarios where email = '$email'";
     $resultado = mysqli_query($caminho,$sql);
-
+    $linha = mysqli_fetch_assoc($resultado);
+    
     if(mysqli_num_rows($resultado)>0){
-
+        $grupo = $linha['grupo'];
         $_SESSION['login'] = $email;
         $_SESSION['senha'] = $senha;
-        if($sql === $paluno){
+
+        if($grupo == '3') {
 
             header('location:../view/aluno.php');
 
         }
-        else if ($sql === $pprofessor){
+        else if ($grupo == '2'){
 
             header('location:../view/professor.php');
 
-        }else if ($sql === $pdiretor){
+        }else if ($grupo == '1'){
 
             header('location:../view/diretor.php');
 

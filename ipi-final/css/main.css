@@ -1,0 +1,27 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    margin: 250px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-container p{
+    font-weight: 700;
+    font-size: larger;
+}
+
+.link-container a{
+    color: aliceblue;
+    margin: 5px 2px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
